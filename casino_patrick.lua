@@ -10,10 +10,8 @@ event.register_handler(menu_event.ScriptsReloaded, function()
     patrick_blip_patch:disable_patch()
 end)
 
-casino_patrick_tab:add_imgui(function()
-    if ImGui.Button("Trigger Event") then
-        if globals.get_int(1916617 + 449 + 38) == 0 then
-            globals.set_int(1906887 + (1 + (self.get_id() * 304)) + 29 + 18, 1)
-        end
+casino_patrick_tab:add_button("Trigger Event", function()
+    if globals.get_int(1916617 + 449 + 38) == 0 then
+        globals.set_int(1906887 + (1 + (self.get_id() * 304)) + 29 + 18, 1)
     end
 end)
